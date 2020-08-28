@@ -1,0 +1,53 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Encounters</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Print</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <ngx-datatable #table class="material" [columnMode]="ColumnMode.force" [headerHeight]="50" [footerHeight]="50"
+            rowHeight="auto" [limit]="10" [rows]="rows">
+            <ngx-datatable-column name="Full Name" [draggable]="false" [resizeable]="false">
+                <ng-template let-column="column" ngx-datatable-header-template>{{ column.name }}</ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div *ngIf="!row.secure" style="padding-top: 10px;">{{ row.name }}</div>
+                    <div *ngIf="row.secure" style="padding-top: 10px;">{{ row.name[0] }}{{ row.name[1] }}{{ row.name[2] }} *******</div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Location" [draggable]="false" [resizeable]="false">
+                <ng-template let-column="column" ngx-datatable-header-template>{{ column.name }}</ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div style="padding-top: 10px;">{{ row.location }}</div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Date" [draggable]="false" [resizeable]="false">
+                <ng-template let-column="column" ngx-datatable-header-template>{{ column.name }}</ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div style="padding-top: 10px;">{{ row.date }}</div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Time" [draggable]="false" [resizeable]="false">
+                <ng-template let-column="column" ngx-datatable-header-template>{{ column.name }}</ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div style="padding-top: 10px;">{{ row.time }}</div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Actions" draggable="false" [resizeable]="false">
+                <ng-template let-column="column" ngx-datatable-header-template>{{ column.name }}</ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div style="display: flex;align-items: center;">
+                        <button type="button" class="btn btn-primary" (click)="delete(row.uid)" style="margin-right: 5px;">
+                            Delete
+                          </button>
+                          <button type="button" class="btn btn-success" (click)="sendCustomMessage(row.uid)">
+                            Send Message
+                          </button>
+                    </div>
+                </ng-template>
+            </ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>

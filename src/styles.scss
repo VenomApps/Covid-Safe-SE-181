@@ -1,1 +1,212 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+.card {
+    border: 0;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    background: #fff;
+    box-shadow: 0 1px 15px 0 rgb(230, 230, 230);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    border-radius: .2857rem;
+}
+
+
+.card .card-body {
+    padding: 15px;
+    flex: 1 1 auto;
+}
+
+.card-stats .info-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: top right/210% 210% #e14eca;
+    background-image: linear-gradient(to bottom left,#e14eca,#ba54f5,#e14eca);
+}
+
+.card-stats .info-icon.icon-warning {
+    background: top right/210% 210% #ff8d72;
+    background-image: linear-gradient(to bottom left,#ff8d72,#ff6491,#ff8d72);
+}
+
+.card-stats .info-icon.icon-danger {
+    background: top right/210% 210% #fd5d93;
+    background-image: linear-gradient(to bottom left,#fd5d93,#ec250d,#fd5d93);
+}
+
+.card-stats .info-icon.icon-success {
+    background: top right/210% 210% #00f2c3;
+    background-image: linear-gradient(to bottom left,#00f2c3,#0098f0,#00f2c3);
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.card-stats .info-icon i {
+    color: #fff;
+    font-size: 1.7em;
+    padding: 14px 13px;
+}
+
+.card-stats .numbers {
+    text-align: right;
+}
+
+.card-category, .category {
+    text-transform: capitalize;
+    font-weight: 400;
+    color: #9a9a9a;
+    font-size: 1.2em;
+}
+
+.card-category, .card-title {
+    margin-bottom: 0;
+    color: #333;
+}
+
+.card .card-body .card-title {
+    color: #fff;
+    text-transform: inherit;
+    font-weight: 300;
+    margin-bottom: .75rem;
+    color: #333;
+}
+
+.card-stats .numbers .card-title {
+    margin-top: 0;
+}
+
+.card-stats .card-footer {
+    padding: 0;
+}
+
+.card .card-footer {
+    background-color: transparent;
+    border: 0;
+    padding: 15px;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(.2857rem - .0625rem) calc(.2857rem - .0625rem);
+}
+
+.card-stats .stats {
+    color: #9a9a9a;
+    font-size: .9em;
+}
+
+.card-chart {
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0;
+    background-color: #f6f9fc;
+    border-bottom: .0625rem solid rgba(34,42,66,.05);
+}
+
+.card .card-header {
+    padding: 15px 15px 0;
+    border: 0;
+    color: rgba(255,255,255,.8);
+}
+
+.card .card-header:not([data-background-color]) {
+    background-color: transparent;
+}
+
+.white-content .card:not(.card-white) .card-header, .white-content .card:not(.card-white) .card-header a[data-toggle=collapse] {
+    color: #333;
+}
+
+.text-left {
+    text-align: left!important;
+}
+
+.card-chart .chart-area {
+    height: 380px;
+    width: 100%;
+}
+
+.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
+    position: absolute;
+    direction: ltr;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.chartjs-render-monitor {
+    -webkit-animation: 1ms chartjs-render-animation;
+    animation: 1ms chartjs-render-animation
+}
+
+.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink {
+    position: absolute;
+    direction: ltr;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: -1
+}
+
+.chartjs-size-monitor-expand>div {
+    position: absolute;
+    width: 1000000px;
+    height: 1000000px;
+    left: 0;
+    top: 0
+}
+
+.chartjs-size-monitor-shrink>div {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0
+}
+
+@-webkit-keyframes chartjs-render-animation {
+    from {
+        opacity: .99
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes chartjs-render-animation {
+    from {
+        opacity: .99
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.bs-datepicker {
+    box-shadow: none!important;
+    border: 1px solid #ced4da!important;
+    border-radius: 5px!important;
+}

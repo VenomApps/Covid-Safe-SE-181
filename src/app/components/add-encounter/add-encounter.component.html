@@ -1,0 +1,73 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Add Encounter</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-9 mb-3">
+                <label>Full Name</label>
+                <input type="text" class="form-control" id="firstName"
+                    placeholder="Enter the name of the person you encountered..." [(ngModel)]="fullName" [typeahead]="namesList" [isAnimated]="true" required>
+                <div class="invalid-feedback">
+                    Valid full name is required.
+                </div>
+            </div>
+            <div class="col-md-9 mb-3">
+                <label>Email</label>
+                <input type="text" class="form-control" id="email"
+                    placeholder="Enter the person's email address..." [(ngModel)]="email" [typeahead]="emailsList" [isAnimated]="true" required>
+                <div class="invalid-feedback">
+                    Valid email is required.
+                </div>
+            </div>
+            <div class="col-md-9 mb-3">
+                <label>Location</label>
+                <input type="text" class="form-control" id="location"
+                    placeholder="Enter the location of the encounter..." [(ngModel)]="location"
+                    [typeahead]="locationList" [isAnimated]="true" required>
+                <div class="invalid-feedback">
+                    Valid location is required.
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label >Interaction Time</label>
+                <div class="pr-3 pb-3">
+                    <div class="btn-group" btnRadioGroup>
+                        <label class="btn btn-primary" [(ngModel)]="checkModel" btnRadio="Briefly" tabindex="0"
+                            role="button">Briefly</label>
+                        <label class="btn btn-primary" [(ngModel)]="checkModel" btnRadio="Medium" tabindex="0"
+                            role="button">Medium</label>
+                        <label class="btn btn-primary" [(ngModel)]="checkModel" btnRadio="Extensive" tabindex="0"
+                            role="button">Extensive</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>Time Of Encounter</label>
+                <div class="pr-3 pb-3">
+                    <timepicker [(ngModel)]="encounterTime"></timepicker>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="firstName">Date Of Encounter</label>
+                <div class="pr-3 pb-3">
+                    <bs-datepicker-inline [(bsValue)]="encounterDate" [maxDate]="maxDate"></bs-datepicker-inline>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 200px;">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="submitEncounter()">Submit Encounter</button>
+    </div>
+    <div class="col-md-3"></div>
+</div>
